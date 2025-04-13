@@ -15,11 +15,11 @@ if ($conn->connect_error) {
     die(json_encode(["status" => "error", "message" => "Conexión fallida: " . $conn->connect_error]));
 }
 
-// Obtenemos la ruta de la solicitud
-$request = $_SERVER['REQUEST_URI'];
+// Obtenemos solo la ruta sin query params
+$request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-// Endpoint: /users
-if (preg_match('/\/users$/', $request)) {
+// Si termina en /users o /index.php/users
+if (preg_match('/\/(index\.php\/)?users$/', $request)) {
     $query = "SELECT * FROM users";
     $result = $conn->query($query);
 
@@ -32,9 +32,12 @@ if (preg_match('/\/users$/', $request)) {
     exit;
 }
 
-// Si no coincide ninguna ruta
+// Puedes añadir más rutas aquí con más `if`
+
+// Ruta no encontrada
 http_response_code(404);
 echo json_encode([
     "status" => "error",
     "message" => "Ruta no encontrada: $request"
 ]);
+?>
