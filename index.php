@@ -4,7 +4,7 @@ header("Content-Type: application/json");
 
 $host = 'trolley.proxy.rlwy.net';
 $port = 34484;
-$db = 'railway';
+$db = 'swift_users_app';
 $user = 'root';
 $pass = 'aaszmdaiQdpHOzaDkbIpJPvouPYJPkGI';
 
