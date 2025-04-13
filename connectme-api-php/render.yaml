@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: connectme-api
-    env: php
-    plan: free
-    buildCommand: ""
-    startCommand: ""
-    staticPublishPath: public
