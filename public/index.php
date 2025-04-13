@@ -1,3 +1,3 @@
 <?php
-include('../api.php');
+include('../index.php');
 ?>
