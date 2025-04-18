@@ -1,2 +1,2 @@
 <?php
-require_once '../lyrics_api.php';
+require_once '../swit_users_app_api.php';
