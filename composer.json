@@ -1,0 +1,5 @@
+{
+  "name": "swift-app",
+  "description": "API para gestionar letras de canciones",
+  "require": {}
+}
