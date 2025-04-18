@@ -1,5 +1,8 @@
 FROM php:8.2-apache
 
+# Habilitar módulos necesarios
+RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pdo pdo_mysql
+
 # Habilitar mod_rewrite para que funcione .htaccess
 RUN a2enmod rewrite
 
